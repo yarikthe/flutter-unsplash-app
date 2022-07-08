@@ -1,16 +1,18 @@
 class UserModel {
-  
+
   String? id;
   String? name;
-  List<ProfileImageUserModel>? profileImage;
+  ProfileImageUserModel? profileImage;
+  String? instagram;
 
-  UserModel({this.id, this.name, this.profileImage});
+  UserModel({this.id, this.name, this.profileImage, this.instagram});
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       new UserModel(
         id: json['id'] ?? '',
-        name: json['name'] ?? '',
-        profileImage: json['profile_image'] == null ? null : List<ProfileImageUserModel>.from(json['profile_image'].map((model)=> ProfileImageUserModel.fromJson(model))),
+        name: json['name'] ?? 'Назва',
+        profileImage: json['profile_image'] == null ? null : ProfileImageUserModel.fromJson(json['profile_image']),
+        instagram: json['instagram_username'] == null ?  'instagram' : json['instagram_username']
       );
 }
 

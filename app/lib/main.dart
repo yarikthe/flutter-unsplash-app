@@ -9,12 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Unsplash Test App',
+      title: 'Тестове завдання',
       themeMode: ThemeMode.system,
       home: HomeScreen(),
     );

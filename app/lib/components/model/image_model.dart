@@ -2,7 +2,7 @@ import 'package:app/components/model/user_model.dart';
 
 class ImageModel {
   String? id;
-  List<UrlsImageModel>? urls;
+  UrlsImageModel? urls;
   int? likes;
   String? description;
   UserModel? author;
@@ -13,8 +13,7 @@ class ImageModel {
       id: json['id'],
       urls: json['urls'] == null
           ? null
-          : List<UrlsImageModel>.from(
-              json['urls'].map((model) => UrlsImageModel.fromJson(model))),
+          : UrlsImageModel.fromJson(json['urls']),
       likes: json['likes'] ?? 0,
       description: json['description'] ?? '',
       author: json['user'] == null ? null : UserModel.fromJson(json['user']));
