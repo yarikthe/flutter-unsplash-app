@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:app/components/model/image_model.dart';
+import 'package:app/service/api/api_config.dart';
 import 'package:app/service/api/api_method.dart';
 
 class ImageApi {
@@ -9,7 +10,7 @@ class ImageApi {
 
     try{
 
-      final response = await ApiMethod().methodGET();
+      final response = await ApiMethod().methodGET('photos/?client_id=${ApiConfig.TOKEN}');
 
       if(response.statusCode == 200){
 

@@ -37,10 +37,10 @@ class UserCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                    '${model.name!.length > 12 ? '${model.name}'.substring(0, 11) + '...' : model.name}',
+                    '${model.name!.length > 11 ? '${model.name}'.substring(0, 10) + '...' : model.name}',
                     style: Theme.of(context).textTheme.caption),
                 Text(
-                    '@${model.instagram!.length > 12 ? '${model.instagram}'.substring(0, 11) + '...' : model.instagram}',
+                    '@${model.instagram!.length > 11 ? '${model.instagram}'.substring(0, 10) + '...' : model.instagram}',
                     style: Theme.of(context).textTheme.caption),
               ],
             )

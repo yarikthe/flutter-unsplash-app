@@ -37,8 +37,7 @@ class ImageCard extends StatelessWidget {
               fit: BoxFit.cover,
               height: 100,
               width: MediaQuery.of(context).size.width * .45,
-              placeholder: (context, url) =>
-                  CircularProgressIndicator.adaptive(),
+              placeholder: (context, url) => Center(child: CircularProgressIndicator.adaptive()),
               errorWidget: (context, url, error) => Icon(Icons.error),
             ),
             SizedBox(height: 10),
@@ -46,7 +45,7 @@ class ImageCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '${model.description ?? 'name'}'.toUpperCase(),
+                  '${model.description == '' ? 'Назва' : model.description}'.toUpperCase(),
                   style: Theme.of(context).textTheme.caption,
                 ),
                 Row(
